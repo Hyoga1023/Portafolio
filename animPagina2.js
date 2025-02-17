@@ -5,7 +5,7 @@ const panels = document.querySelectorAll('.menu-panel');
 function centerPanel(panel) {
   if (window.innerWidth > 768) { // Solo centrar en pantallas grandes
     const rect = panel.getBoundingClientRect();
-    const centerX = window.innerWidth / 3 - (rect.left + rect.width /3);
+    const centerX = window.innerWidth / 2 - (rect.left + rect.width /2);
     const centerY = window.innerHeight / 7 - (rect.top + rect.height / 7);
     panel.style.transform = `translate(${centerX}px, ${centerY}px) translateZ(100px) scale(0.9)`;
   } else {
