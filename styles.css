@@ -466,7 +466,7 @@ footer {
   .Titulo {
     font-size: 0.5rem;
     text-align: right; /* Alinea el texto hacia la derecha */
-    margin: 20px 10px 20px 0; /* Ajusta el margen */
+    margin: 20px 30px 20px 0; /* Ajusta el margen */
     width: 100%; /* Asegura que ocupe todo el ancho disponible */
     white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
     box-sizing: border-box; /* Incluye el padding en el ancho total */
