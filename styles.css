@@ -1,0 +1,510 @@
+/* Fuente Orbitron */
+.orbitron-400 {
+  font-family: "Orbitron", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Fondo general y cuerpo */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Orbitron", serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Título principal */
+.Titulo {
+  font-size: 1em;
+  text-align: center; /* Centrar el texto horizontalmente */
+  margin: 20px 0; /* Espaciado superior e inferior */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-right: 350px; /* Espaciado derecho para el título */
+  width: 100%; /* Ocupar todo el ancho disponible */
+  position: absolute; /* Posicionamiento absoluto para centrarlo */
+  top: 0; /* Colocarlo en la parte superior */
+  left: 100%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Ajustar el centrado */
+  z-index: 100; /* Colocarlo por encima de los paneles */
+  transform: translateX(-50%);
+  transition: transform 0.3s ease; /* Añade una transición suave */
+}
+.Titulo:hover {
+  color: #0ff; /* Cambia el color a cyan al pasar el mouse */
+  transform: translateX(-50%) scale(1.1); /* Mantiene el centrado y agrega escala */
+  text-shadow: 0 0 20px #0ff; /* Agrega un resplandor cyan */
+}
+
+/* Contenedor general de la página */
+.container {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  margin-top: 60px; /* Espacio para el título */
+  padding-bottom: 60px; /* Espacio para el footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); /* Altura total menos título y footer */
+}
+
+/* Efecto holográfico de fondo */
+.hologram-effect {
+  position: absolute; /* Cambiado de absolute a fixed */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Usar viewport width */
+  height: 100vh; /* Usar viewport height */
+  background: radial-gradient(
+      circle at center,
+      rgba(0, 149, 255, 0.05) 0%,
+      rgba(0, 0, 0, 0) 70%
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 149, 255, 0.03),
+      rgba(0, 0, 0, 0)
+    );
+  animation: pulse 4s infinite;
+  pointer-events: none;
+  z-index: 1; /* Reducido para no interferir con otros elementos */
+}
+
+/* Contenedor de los paneles (menú) */
+
+.menu-container {
+  position: absolute;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 100px;
+  transform-style: preserve-3d;
+  z-index: 2; /* Por encima del hologram-effect */
+}
+
+/* Estilo base de cada panel */
+.menu-panel {
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  margin-top: 20px;
+  background-color: rgba(0, 20, 40, 0.7);
+  border: 1px solid #0ff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  overflow: hidden; /* Para evitar que el contenido se desborde */
+}
+img{
+  width: auto;
+  height: 200px;
+}
+.logos_universidades{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  margin: 10px;
+}
+/* Posicionamiento original de cada panel (efecto 3D) */
+.menu-panel:nth-child(1) {
+  transform: translateX(-600px) translateY(-50px) rotateY(-15deg);
+}
+.menu-panel:nth-child(2) {
+  transform: translateX(-300px) translateY(50px) rotateY(-10deg);
+}
+.menu-panel:nth-child(3) {
+  transform: translateX(0px) translateY(-50px);
+}
+.menu-panel:nth-child(4) {
+  transform: translateX(300px) translateY(50px) rotateY(10deg);
+}
+.menu-panel:nth-child(5) {
+  transform: translateX(600px) translateY(100px) rotateY(15deg);
+}
+
+/* Estado activo: panel seleccionado, se centrará vía JS */
+.menu-panel.active {
+  z-index: 10;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+  width: calc(100% - 40px); /* Resta espacio para márgenes */
+  max-width: 800px; /* Limita el ancho máximo */
+  height: auto;
+  transition: all 0.5s ease;
+  position: relative;
+  transform: translate(0, 0) scale(1.1); /* Ajusta el escalado */
+  margin: 10px auto; /* Centra el panel horizontalmente */
+}
+
+/* Paneles ocultos (los que no están activos) */
+.menu-panel.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Encabezado del panel */
+.panel-header {
+  border-bottom: 1px solid #0ff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.panel-title {
+  color: #0ff;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Contenido del panel */
+.panel-content {
+  margin-top: 10px;
+  height: 80%;
+  overflow: hidden;
+}
+
+/* Ítems dentro del panel */
+.menu-item {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+.menu-item:hover {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+  transform: translateX(5px);
+}
+
+/* Indicadores de estado */
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-green {
+  background-color: #0f0;
+  box-shadow: 0 0 5px #0f0;
+}
+.status-red {
+  background-color: #f00;
+  box-shadow: 0 0 5px #f00;
+}
+.status-yellow {
+  background-color: #ff0;
+  box-shadow: 0 0 5px #ff0;
+}
+
+/* Contenido expandido */
+.expanded-content {
+  display: none;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid #0ff;
+}
+
+.menu-panel.active .expanded-content {
+  display: block;
+}
+
+/* Líneas de la cuadrícula */
+.grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+        90deg,
+        rgba(0, 149, 255, 0.1) 1px,
+        transparent 1px
+      )
+      0 0,
+    linear-gradient(0deg, rgba(0, 149, 255, 0.1) 1px, transparent 1px) 0 0;
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+/* Indicador circular */
+.circle-indicator {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.circle-indicator:before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border: 1px dashed rgba(0, 255, 255, 0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-indicator:after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border: 1px dotted rgba(0, 255, 255, 0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Elementos flotantes decorativos */
+.floating-element {
+  position: absolute;
+  font-size: 10px;
+  color: rgba(0, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+/* Keyframes para animaciones */
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Puntos de datos flotantes */
+.data-point {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(0, 255, 255, 0.5);
+  border-radius: 50%;
+  box-shadow: 0 0 2px #0ff;
+  animation: float 3s infinite;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  color: #0ff;
+  width: 100%;
+  height: 100px;
+  background: #000;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.8em;
+  z-index: 1000;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+.logo{
+  width: auto;
+  height: 80px;
+  margin-right: 10px;
+}
+.logos_skills{
+  display: flex;
+  justify-content: center;
+}
+.foto{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+/* Responsividad */
+
+@media(max-width: 1024px) {
+  body{
+    font-size: 0.7rem;
+  }
+  .container {
+    margin-top: 40px;
+    padding-bottom: 80px;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .menu-container {
+    margin-top: 60px;
+    padding: 20px;
+  }
+  footer{
+    display: flex;
+    justify-content: center;
+  }
+  .menu-panel {
+    width: 180px;
+    height: 250px;
+  }
+
+  .menu-panel:nth-child(1) {
+    transform: translateX(-400px) translateY(-50px) rotateY(-15deg);
+  }
+  
+  .menu-panel:nth-child(2) {
+    transform: translateX(-200px) translateY(50px) rotateY(-10deg);
+  }
+  
+  .menu-panel:nth-child(3) {
+    transform: translateX(0) translateY(-25px);
+  }
+  
+  .menu-panel:nth-child(4) {
+    transform: translateX(200px) translateY(50px) rotateY(10deg);
+  }
+  
+  .menu-panel:nth-child(5) {
+    transform: translateX(400px) translateY(-50px) rotateY(15deg);
+  }
+
+  .Titulo {
+    font-size: 0.8em;
+    padding-right: 200px;
+  }
+
+  .menu-panel.active {
+    max-width: 600px;
+    transform: translate(0, 0) scale(1.05);
+  }
+
+  .expanded-content {
+    padding: 15px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  body{
+    font-size: 0.8rem;
+  }
+  .container {
+    margin-top: 40px;
+    padding-bottom: 80px; /* Más espacio para el footer en móviles */
+    min-height: calc(100vh - 80px);
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  }
+  .expanded-content {
+    top: 500px;
+  }
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 40px;
+    min-height: auto;
+    overflow-y: auto;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+  }
+
+  .menu-panel {
+    position: relative; /* Cambia a posición relativa en móviles */
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+    transform: none !important; /* Anula cualquier transformación */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+  }
+
+  .menu-panel.hidden {
+    display: none; /* Oculta las tarjetas inactivas */
+  }
+
+  .menu-panel.active {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    height: auto; /* Ajusta la altura automáticamente */
+    transform: none !important; /* Anula cualquier transformación */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+  }
+
+  .Titulo {
+    font-size: 0.5rem;
+    text-align: right; /* Alinea el texto hacia la derecha */
+    margin: 20px 10px 20px 0; /* Ajusta el margen */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+  }
+
+  footer {
+    flex-direction: column; /* Cambia a columna para mejor organización */
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    padding-left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+  }
+
+  .hologram-effect,
+  .circle-indicator,
+  .floating-element,
+  .data-point,
+  .menu-item,
+  .texto_footer {
+    display: none; /* Oculta elementos decorativos en móviles */
+  }
+
+  /* Asegura que las imágenes no excedan el ancho del contenedor */
+  img {
+    max-width: 100%; /* La imagen no excederá el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  .logos_universidades{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+  }
+  /* Asegura que los textos largos no desborden */
+  .menu-panel, .menu-options li, .Titulo {
+    word-wrap: break-word; /* Rompe palabras largas si es necesario */
+    overflow-wrap: break-word; /* Alternativa para navegadores modernos */
+  }
+}
