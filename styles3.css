@@ -23,7 +23,7 @@ body {
 .Titulo {
   font-size: 1em;
   text-align: center;
-  margin: 20px 50px 20px 0; /* Ajusta el margen */
+  margin: 20px 100px 20px 0; /* Ajusta el margen */
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-right: 350px;
