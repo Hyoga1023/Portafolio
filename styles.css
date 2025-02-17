@@ -22,10 +22,10 @@ body {
 .Titulo {
   font-size: 1em;
   text-align: center; /* Centrar el texto horizontalmente */
-  margin: 20px 0; /* Espaciado superior e inferior */
+  margin: 20px 50px 20px 0; /* Ajusta el margen */
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding-right: 350px; /* Espaciado derecho para el título */
+  padding-right: 500px; /* Espaciado derecho para el título */
   width: 100%; /* Ocupar todo el ancho disponible */
   position: absolute; /* Posicionamiento absoluto para centrarlo */
   top: 0; /* Colocarlo en la parte superior */
@@ -465,8 +465,10 @@ footer {
 
   .Titulo {
     font-size: 0.5rem;
+    right: 20px;
     text-align: right; /* Alinea el texto hacia la derecha */
     margin: 20px 100px 20px 0; /* Ajusta el margen */
+    padding-right: 400px;
     width: 100%; /* Asegura que ocupe todo el ancho disponible */
     white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
     box-sizing: border-box; /* Incluye el padding en el ancho total */

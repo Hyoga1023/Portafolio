@@ -26,7 +26,7 @@ body {
   margin: 20px 100px 20px 0; /* Ajusta el margen */
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding-right: 350px;
+  padding-right: 500px;
   width: 100%;
   position: absolute;
   top: 0;
@@ -472,6 +472,7 @@ footer {
   .Titulo {
     font-size: 0.5rem;
     text-align: right;
+    padding-right: 400px;
     margin: 20px 10px 20px 0;
     width: 100%;
     white-space: nowrap;
