@@ -28,16 +28,12 @@ function centerPanel(panel) {
   let offsetX = screenCenterX - panelCenterX;
   let offsetY = screenCenterY - panelCenterY;
 
-  // Limitar el desplazamiento para evitar desbordamiento
-  const maxOffsetX = (window.innerWidth - rect.width * scale) / 2;
-  const maxOffsetY = (window.innerHeight - rect.height * scale) / 2;
-
-  offsetX = Math.max(Math.min(offsetX, maxOffsetX), -maxOffsetX);
-  offsetY = Math.max(Math.min(offsetY, maxOffsetY), -maxOffsetY);
-
-  // Aplicar la transformación con límites
+  // Aplicar la transformación con límites para centrar el panel
+  panel.style.position = 'fixed'; // Fijar el panel para evitar el desbordamiento
+  panel.style.top = '50%';
+  panel.style.left = '50%';
   panel.style.transform = `
-    translate(${offsetX}px, ${offsetY}px)
+    translate(-50%, -50%)
     translateZ(50px)
     scale(${scale})
   `;
@@ -55,6 +51,9 @@ panels.forEach(panel => {
     panels.forEach(p => {
       p.classList.remove('active');
       p.classList.remove('hidden');
+      p.style.position = '';
+      p.style.top = '';
+      p.style.left = '';
       p.style.transform = '';
     });
 
@@ -76,6 +75,9 @@ document.addEventListener('click', () => {
   panels.forEach(panel => {
     panel.classList.remove('active');
     panel.classList.remove('hidden');
+    panel.style.position = '';
+    panel.style.top = '';
+    panel.style.left = '';
     panel.style.transform = '';
   });
 });
