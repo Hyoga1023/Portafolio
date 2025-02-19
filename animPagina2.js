@@ -130,3 +130,37 @@ function createDataPoints() {
 
 // Llamar a la función para crear puntos de datos
 createDataPoints();
+
+// Crear partículas estelares
+function createStarParticles() {
+  const container = document.querySelector('.container');
+  for (let i = 0; i < 50; i++) { // Crear 50 partículas
+    const particle = document.createElement('div');
+    particle.classList.add('star-particle');
+    particle.style.left = `${Math.random() * 100}vw`;
+    particle.style.top = `${Math.random() * 100}vh`;
+    container.appendChild(particle);
+    animateParticle(particle);
+  }
+}
+
+// Animar partículas estelares
+function animateParticle(particle) {
+  const duration = Math.random() * 5 + 5; // Duración entre 5 y 10 segundos
+  particle.style.transition = `transform ${duration}s linear`;
+  particle.style.transform = `translateX(${Math.random() * 10 - 5}vw) translateY(${Math.random() * 10 - 5}vh) scale(${Math.random() * 0.5 + 0.5})`;
+
+  // Reiniciar la animación una vez completada
+  particle.addEventListener('transitionend', () => {
+    particle.style.transition = 'none';
+    particle.style.transform = 'none';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        animateParticle(particle);
+      });
+    });
+  });
+}
+
+// Llamar a la función para crear partículas estelares
+createStarParticles();

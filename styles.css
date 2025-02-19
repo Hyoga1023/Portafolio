@@ -341,8 +341,15 @@ img{
     transform: translateY(0);
   }
 }
-
-
+/* Partículas estelares */
+.star-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(0, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
 footer {
   display: flex;
   justify-content: center;
