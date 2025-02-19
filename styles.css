@@ -22,7 +22,7 @@ body {
 .Titulo {
   font-size: 1em;
   text-align: center; /* Centrar el texto horizontalmente */
-  margin: 20px 50px 20px 0; /* Ajusta el margen */
+  margin: 20px 50px 5px 0; /* Ajusta el margen */
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-right: 500px; /* Espaciado derecho para el título */
@@ -46,7 +46,7 @@ body {
   flex: 1;
   position: relative;
   width: 100%;
-  margin-top: 60px; /* Espacio para el título */
+  margin-top: 0; /* Espacio para el título */
   padding-bottom: 60px; /* Espacio para el footer */
   display: flex;
   justify-content: center;
