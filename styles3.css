@@ -532,6 +532,7 @@ footer {
   .floating-element,
   .data-point,
   .menu-item,
+  .star-particle,
   .texto_footer {
     display: none;
   }

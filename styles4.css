@@ -516,7 +516,15 @@ footer {
     box-sizing: border-box;
   }
 
-
+  .hologram-effect,
+  .circle-indicator,
+  .floating-element,
+  .data-point,
+  .star-particle,
+  .menu-item,
+  .texto_footer {
+    display: none;
+  }
 
   img {
     max-width: 100%;
