@@ -18,7 +18,13 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+p {
+  max-width: 600px; /* Ancho máximo para evitar líneas largas */
+  margin: 16px auto; /* Centrar y añadir espacio entre párrafos */
+  letter-spacing: 0.05em; /* Espacio entre letras */
+  word-spacing: 0.1em; /* Espacio entre palabras */
+  text-align: justify; /* Texto justificado */
+}
 /* Título principal */
 .Titulo {
   font-size: 1em;
