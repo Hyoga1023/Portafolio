@@ -52,7 +52,7 @@
     border: 1px solid #0ff;
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0, 204, 255, 0.2);
-    padding: 20px 40px;
+    padding: 10px 40px;
     text-align: center;
     animation: float 5s ease-in-out infinite;
     width: 100%;
