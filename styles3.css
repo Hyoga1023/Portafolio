@@ -84,7 +84,7 @@ body {
   width: 100%;
   flex: 1;
   display: flex;
-  left: 100px;
+  left: 150px;
   justify-content: center;
   align-items: center;
   padding: 100px;
@@ -321,12 +321,33 @@ img {
   position: absolute;
   width: 2px;
   height: 2px;
-  background-color: rgba(255, 111, 0, 0.5); /* Naranja ácido */
+  
   border-radius: 50%;
-  box-shadow: 0 0 2px #ff6f00; /* Resplandor naranja */
+  
   animation: float 3s infinite;
 }
+.data-point {
+  position: absolute;
+  font-size: 10px;
+  color: #ff6f00;
+  background-color: rgba(255, 111, 0, 0.5); /* Naranja ácido */
+  pointer-events: none;
+  box-shadow: 0 0 2px #ff6f00; /* Resplandor naranja */
+  animation: float 5s infinite; /* Animación flotante */
+  white-space: nowrap;
+}
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 footer {
   display: flex;
   justify-content: center;

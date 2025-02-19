@@ -84,7 +84,7 @@ body {
   width: 100%;
   flex: 1;
   display: flex;
-  left: 100px;
+  left: 150px;
   justify-content: center;
   align-items: center;
   padding: 100px;
@@ -316,13 +316,25 @@ img{
 /* Puntos de datos flotantes */
 .data-point {
   position: absolute;
-  width: 2px;
-  height: 2px;
-  background-color: rgba(0, 255, 255, 0.5);
-  border-radius: 50%;
-  box-shadow: 0 0 2px #0ff;
-  animation: float 3s infinite;
+  font-size: 10px;
+  color: rgba(0, 255, 255, 0.7);
+  pointer-events: none;
+  animation: float 5s infinite; /* Animación flotante */
+  white-space: nowrap;
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 footer {
   display: flex;
   justify-content: center;
