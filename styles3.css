@@ -348,6 +348,7 @@ img {
     transform: translateY(0);
   }
 }
+
 footer {
   display: flex;
   justify-content: center;

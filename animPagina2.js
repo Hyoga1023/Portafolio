@@ -99,6 +99,7 @@ window.addEventListener('resize', () => {
     }
   }, 250); // Esperar 250ms después del último evento de resize
 });
+
 // Lista de datos espaciales para mostrar
 const spaceData = [
   { name: "Andromeda", coordinates: "RA 00h 42m 44s | Dec +41° 16′ 9″" },
