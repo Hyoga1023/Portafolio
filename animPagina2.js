@@ -28,6 +28,9 @@ function centerPanel(panel) {
   let offsetX = screenCenterX - panelCenterX;
   let offsetY = screenCenterY - panelCenterY;
 
+  // Ajustar el tamaño del panel para que sea un poco más pequeño al centrarse
+  const panelScale = scale * 0.9;
+
   // Aplicar la transformación con límites para centrar el panel
   panel.style.position = 'fixed'; // Fijar el panel para evitar el desbordamiento
   panel.style.top = '50%';
@@ -35,7 +38,7 @@ function centerPanel(panel) {
   panel.style.transform = `
     translate(-50%, -50%)
     translateZ(50px)
-    scale(${scale})
+    scale(${panelScale})
   `;
 }
 
