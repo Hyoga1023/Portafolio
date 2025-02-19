@@ -11,73 +11,60 @@ function getResponsiveScale() {
   return 1;                           // Pantallas más grandes
 }
 
-// Función para obtener el desplazamiento vertical basado en el tamaño de la pantalla
-function getVerticalOffset() {
-  const height = window.innerHeight;
-  if (height < 768) return 5;         // Pantallas bajas
-  if (height < 900) return 6;         // Pantallas medianas
-  return 7;                           // Pantallas altas
-}
-
-// Función mejorada para centrar el panel activo
+// Función para centrar el panel activo
 function centerPanel(panel) {
-  if (window.innerWidth > 768) {
-    const rect = panel.getBoundingClientRect();
-    const scale = getResponsiveScale();
-    
-    // Calcular el centro de la pantalla
-    const screenCenterX = window.innerWidth / 2;
-    const screenCenterY = window.innerHeight / getVerticalOffset();
-    
-    // Calcular el centro del panel
-    const panelCenterX = rect.left + rect.width / 2;
-    const panelCenterY = rect.top + rect.height / 2;
-    
-    // Calcular el desplazamiento necesario
-    const offsetX = screenCenterX - panelCenterX;
-    const offsetY = screenCenterY - panelCenterY;
-    
-    // Limitar el desplazamiento vertical para evitar desbordamiento
-    const maxOffsetY = window.innerHeight * 0.2; // 20% de la altura de la ventana
-    const clampedOffsetY = Math.max(Math.min(offsetY, maxOffsetY), -maxOffsetY);
-    
-    // Aplicar la transformación con límites
-    panel.style.transform = `
-      translate(${offsetX}px, ${clampedOffsetY}px) 
-      translateZ(50px) 
-      scale(${scale})
-    `;
-  } else {
-    // En dispositivos móviles, usar una transformación más simple
-    panel.style.transform = `
-      translateZ(50px) 
-      scale(${getResponsiveScale()})
-    `;
-  }
+  const scale = getResponsiveScale();
+  const rect = panel.getBoundingClientRect();
+
+  // Calcular el centro de la pantalla
+  const screenCenterX = window.innerWidth / 2;
+  const screenCenterY = window.innerHeight / 2;
+
+  // Calcular el centro del panel
+  const panelCenterX = rect.left + rect.width / 2;
+  const panelCenterY = rect.top + rect.height / 2;
+
+  // Calcular el desplazamiento necesario
+  let offsetX = screenCenterX - panelCenterX;
+  let offsetY = screenCenterY - panelCenterY;
+
+  // Limitar el desplazamiento para evitar desbordamiento
+  const maxOffsetX = (window.innerWidth - rect.width * scale) / 2;
+  const maxOffsetY = (window.innerHeight - rect.height * scale) / 2;
+
+  offsetX = Math.max(Math.min(offsetX, maxOffsetX), -maxOffsetX);
+  offsetY = Math.max(Math.min(offsetY, maxOffsetY), -maxOffsetY);
+
+  // Aplicar la transformación con límites
+  panel.style.transform = `
+    translate(${offsetX}px, ${offsetY}px)
+    translateZ(50px)
+    scale(${scale})
+  `;
 }
 
 // Manejar el clic en cada panel
 panels.forEach(panel => {
   panel.addEventListener('click', (e) => {
     e.stopPropagation();
-    
+
     // Si el panel ya está activo, no hacer nada
     if (panel.classList.contains('active')) return;
-    
+
     // Desactivar y mostrar todos los paneles primero
     panels.forEach(p => {
       p.classList.remove('active');
       p.classList.remove('hidden');
       p.style.transform = '';
     });
-    
+
     // Ocultar los paneles no seleccionados
     panels.forEach(p => {
       if (p !== panel) {
         p.classList.add('hidden');
       }
     });
-    
+
     // Activar el panel seleccionado y centrarlo
     panel.classList.add('active');
     centerPanel(panel);
