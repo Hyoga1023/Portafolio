@@ -207,3 +207,36 @@ document.addEventListener("mouseup", () => {
   futuristicCursor.style.transform = "scale(1) translate(-50%, -50%)"; // Vuelve al tamaño normal
   futuristicCursor.style.boxShadow = "0 0 15px 3px #00ffff, 0 0 30px 10px #0066ff"; // Menos brillo
 });
+
+  // Cargar sonidos
+  const sonidoPanel = new Audio('audio/Sonidos_Panel.wav');
+  const sonidoAmbiente = new Audio('audio/Sonido_ambiente_Laboratorio.wav');
+
+  // Reproducir sonido ambiente en loop
+  sonidoAmbiente.loop = true;
+  sonidoAmbiente.volume = 0.5;
+  sonidoAmbiente.play();
+
+  // Asignar evento a los paneles
+  const menuPanels = document.querySelectorAll('.menu-panel');
+  menuPanels.forEach(panel => {
+    panel.addEventListener('click', () => {
+      sonidoPanel.currentTime = 0;
+      sonidoPanel.play();
+    });
+  });
+  const homeButton = document.querySelector('#home-button');
+
+  // Asignar evento al botón para reproducir el sonido
+  if (homeButton) {
+      homeButton.addEventListener('click', (event) => {
+          event.preventDefault(); // Prevenir la navegación inmediata
+          sonidoPanel.currentTime = 0; // Reiniciar el audio
+          sonidoPanel.play(); // Reproducir el sonido
+  
+          // Esperar a que el sonido termine antes de navegar
+          sonidoPanel.addEventListener('ended', () => {
+              window.location.href = 'index.html'; // Redirigir al Home
+          });
+      });
+  }
