@@ -454,32 +454,34 @@ footer {
 
   .container {
     padding: 10px;
-    margin-top: 20px;
+    margin: 0;        /* Eliminado margin-top */
     min-height: auto;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;  /* Asegura el contexto de apilamiento */
+  }
+
+  .menu-container {
+    position: relative;  /* Cambiado de absolute a relative */
+    padding: 10px;
+    margin: 0;          /* Eliminado margin-top */
+    left: 0;            /* Resetear left */
+    transform: none;    /* Eliminar cualquier transformación */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .Titulo {
+    position: relative; /* Cambiado de static a relative */
     font-size: 1.2rem;
     margin: 15px auto;
     padding: 0 10px;
-    position: relative;
     transform: none;
     text-align: center;
     width: 100%;
     left: 0;
-  }
-
-  .menu-container {
-    position: relative;
-    padding: 0;
-    margin: 100px 0;
-    left: 0;
-    transform: none;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
   }
 
   .menu-panel {
@@ -493,6 +495,7 @@ footer {
     opacity: 1 !important;
     pointer-events: auto !important;
     box-sizing: border-box;
+    left: 0;           /* Asegurar que no haya desplazamiento lateral */
   }
 
   .menu-panel.active {
@@ -506,6 +509,19 @@ footer {
     display: block;
     opacity: 1;
     pointer-events: auto;
+  }
+
+  /* Resetear las posiciones específicas de cada panel */
+  .menu-panel:nth-child(1),
+  .menu-panel:nth-child(2),
+  .menu-panel:nth-child(3),
+  .menu-panel:nth-child(4),
+  .menu-panel:nth-child(5) {
+    transform: none !important;
+    margin: 10px auto;
+    position: relative;
+    left: 0;
+    top: 0;
   }
 
   .panel-content {
@@ -527,11 +543,6 @@ footer {
     margin: 10px auto;
   }
 
-  .foto {
-    margin: 15px 0;
-  }
-
-  /* Ajustes para logos */
   .logos_universidades,
   .logos_skills {
     flex-wrap: wrap;
@@ -560,22 +571,5 @@ footer {
   .logo {
     height: 60px;
     margin: 5px;
-  }
-
-  /* Ajustes de texto */
-  p {
-    margin: 12px auto;
-    padding: 0 15px;
-    text-align: left;
-    max-width: 100%;
-  }
-
-  .panel-title {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-  }
-
-  .menu-item {
-    padding: 10px 0;
   }
 }
