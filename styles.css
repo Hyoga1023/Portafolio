@@ -17,6 +17,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  cursor:none;
 }
 p {
   max-width: 600px; /* Ancho máximo para evitar líneas largas */
@@ -41,13 +42,30 @@ p {
   z-index: 100; /* Colocarlo por encima de los paneles */
   transform: translateX(-50%);
   transition: transform 0.3s ease; /* Añade una transición suave */
+  cursor:none;
 }
 .Titulo:hover {
   color: #0ff; /* Cambia el color a cyan al pasar el mouse */
   transform: translateX(-50%) scale(1.1); /* Mantiene el centrado y agrega escala */
   text-shadow: 0 0 20px #0ff; /* Agrega un resplandor cyan */
+  cursor:none;
 }
-
+a{
+  cursor: none 
+}
+.futuristic-cursor {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  clip-path: polygon(50% 0%, 100% 100%, 50% 80%, 0% 100%); /* Forma de flecha */
+  background: linear-gradient(135deg, #00ffff, #0066ff); /* Colores futuristas */
+  pointer-events: none; /* No interfiere con clics */
+  z-index: 9999;
+  box-shadow: 0 0 15px 3px #00ffff, 0 0 30px 10px #0066ff; /* Brillo futurista */
+  transform: translate(-50%, -50%) rotate(45deg); /* Ajusta el ángulo de la flecha */
+  transition: transform 0.1s ease, box-shadow 0.3s ease-in-out;
+}
 /* Contenedor general de la página */
 .container {
   flex: 1;
@@ -113,7 +131,6 @@ p {
   padding: 20px;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
-  cursor: pointer;
   overflow: hidden; /* Para evitar que el contenido se desborde */
 }
 img{

@@ -12,6 +12,7 @@
     height: 100vh;
     font-family: "Orbitron", sans-serif;
     display: flex;
+    cursor:none;
     flex-direction: column;
     align-items: center;
     /* Degradado principal con tonos azules y efecto de luz */
@@ -36,7 +37,22 @@
         #00050a;
     }
   }
-  
+  .futuristic-cursor {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    clip-path: polygon(50% 0%, 100% 100%, 50% 80%, 0% 100%); /* Forma de flecha */
+    background: linear-gradient(135deg, #00ffff, #0066ff); /* Colores futuristas */
+    pointer-events: none; /* No interfiere con clics */
+    z-index: 9999;
+    box-shadow: 0 0 15px 3px #00ffff, 0 0 30px 10px #0066ff; /* Brillo futurista */
+    transform: translate(-50%, -50%) rotate(45deg); /* Ajusta el ángulo de la flecha */
+    transition: transform 0.1s ease, box-shadow 0.3s ease-in-out;
+  }
+  a{
+    cursor: none 
+  }
   /* Contenedor del menú */
   .menu-container {
     display: flex;
@@ -87,7 +103,6 @@
     margin: 15px 0;
     font-size: 1.2em;
     padding: 10px;
-    cursor: pointer;
     border: 1px solid #fad501;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;

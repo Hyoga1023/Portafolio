@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   display: flex;
+  cursor:none;
   flex-direction: column;
 }
 p {
@@ -24,6 +25,9 @@ p {
   letter-spacing: 0.05em; /* Espacio entre letras */
   word-spacing: 0.1em; /* Espacio entre palabras */
   text-align: justify; /* Texto justificado */
+}
+a{
+  cursor: none 
 }
 /* Título principal */
 .Titulo {
@@ -47,7 +51,19 @@ p {
   transform: translateX(-50%) scale(1.1);
   text-shadow: 0 0 20px #39ff14; /* Resplandor verde */
 }
-
+.futuristic-cursor {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  clip-path: polygon(50% 0%, 100% 100%, 50% 80%, 0% 100%); /* Forma de flecha */
+  background: linear-gradient(135deg, #45e9b8, #39ff14); /* Colores futuristas */
+  pointer-events: none; /* No interfiere con clics */
+  z-index: 9999;
+  box-shadow: 0 0 15px 3px #45e9b8, 0 0 30px 10px #39ff14; /* Brillo futurista */
+  transform: translate(-50%, -50%) rotate(45deg); /* Ajusta el ángulo de la flecha */
+  transition: transform 0.1s ease, box-shadow 0.3s ease-in-out;
+}
 /* Contenedor general de la página */
 .container {
   flex: 1;
@@ -112,7 +128,6 @@ p {
   padding: 20px;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
-  cursor: pointer;
   overflow: hidden;
 }
 

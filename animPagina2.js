@@ -186,3 +186,24 @@ function animateParticle(particle) {
 // Inicializar efectos
 createDataPoints();
 createStarParticles();
+// Crear el puntero futurista
+const futuristicCursor = document.createElement("div");
+futuristicCursor.classList.add("futuristic-cursor");
+document.body.appendChild(futuristicCursor);
+
+// Mover el puntero según la posición del mouse
+document.addEventListener("mousemove", (e) => {
+  futuristicCursor.style.top = `${e.clientY}px`; // Actualiza posición Y
+  futuristicCursor.style.left = `${e.clientX}px`; // Actualiza posición X
+});
+
+// Agregar efecto al hacer clic
+document.addEventListener("mousedown", () => {
+  futuristicCursor.style.transform = "scale(1.5) translate(-50%, -50%)"; // Agranda el puntero
+  futuristicCursor.style.boxShadow = "0 0 30px 10px #00ffff, 0 0 50px 20px #0066ff"; // Más brillo
+});
+
+document.addEventListener("mouseup", () => {
+  futuristicCursor.style.transform = "scale(1) translate(-50%, -50%)"; // Vuelve al tamaño normal
+  futuristicCursor.style.boxShadow = "0 0 15px 3px #00ffff, 0 0 30px 10px #0066ff"; // Menos brillo
+});
