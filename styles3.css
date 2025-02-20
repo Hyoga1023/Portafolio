@@ -175,6 +175,7 @@ img {
 .panel-title {
   color: #FF4500; /* Naranja ácido */
   font-size: 1.2em;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
