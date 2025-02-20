@@ -43,9 +43,9 @@ p {
 }
 
 .Titulo:hover {
-  color: #ff6f00; /* Naranja ácido */
+  color: #FF4500; /* Naranja ácido */
   transform: translateX(-50%) scale(1.1);
-  text-shadow: 0 0 20px #ff6f00; /* Resplandor naranja */
+  text-shadow: 0 0 20px #FF4500; /* Resplandor naranja */
 }
 
 /* Contenedor general de la página */
@@ -106,8 +106,8 @@ p {
   height: 300px;
   margin-top: 20px;
   background-color: rgba(30, 30, 0, 0.7);
-  border: 1px solid #ff6f00; /* Borde naranja ácido */
-  box-shadow: 0 0 15px rgba(255, 111, 0, 0.5); /* Sombra naranja */
+  border: 1px solid #FF4500; /* Borde naranja ácido */
+  box-shadow: 0 0 15px rgba(247, 152, 9, 0.5); /* Sombra naranja */
   border-radius: 10px;
   padding: 20px;
   transform-style: preserve-3d;
@@ -148,7 +148,7 @@ img {
 /* Estado activo: panel seleccionado, se centrará vía JS */
 .menu-panel.active {
   z-index: 10;
-  box-shadow: 0 0 25px rgba(255, 111, 0, 0.7); /* Sombra naranja */
+  box-shadow: 0 0 25px rgba(252, 153, 6, 0.7); /* Sombra naranja */
   width: calc(100% - 40px);
   max-width: 800px;
   height: auto;
@@ -167,13 +167,13 @@ img {
 
 /* Encabezado del panel */
 .panel-header {
-  border-bottom: 1px solid #ff6f00; /* Borde naranja ácido */
+  border-bottom: 1px solid #FF4500; /* Borde naranja ácido */
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
 
 .panel-title {
-  color: #ff6f00; /* Naranja ácido */
+  color: #FF4500; /* Naranja ácido */
   font-size: 1.2em;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -194,8 +194,8 @@ img {
 }
 
 .menu-item:hover {
-  color: #ff6f00; /* Naranja ácido */
-  text-shadow: 0 0 5px #ff6f00; /* Resplandor naranja */
+  color: #FF4500; /* Naranja ácido */
+  text-shadow: 0 0 5px #FF4500; /* Resplandor naranja */
   transform: translateX(5px);
 }
 
@@ -227,7 +227,7 @@ img {
   margin-top: 10px;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.8);
-  border-top: 1px solid #ff6f00; /* Borde naranja ácido */
+  border-top: 1px solid #FF4500; /* Borde naranja ácido */
 }
 
 .menu-panel.active .expanded-content {
@@ -257,7 +257,7 @@ img {
   position: absolute;
   width: 800px;
   height: 800px;
-  border: 1px solid rgba(255, 111, 0, 0.2); /* Borde naranja ácido */
+  border: 1px solid rgba(252, 119, 18, 0.2); /* Borde naranja ácido */
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -270,7 +270,7 @@ img {
   position: absolute;
   width: 600px;
   height: 600px;
-  border: 1px dashed rgba(255, 111, 0, 0.3); /* Borde naranja ácido */
+  border: 1px dashed rgba(255, 153, 20, 0.3); /* Borde naranja ácido */
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -282,7 +282,7 @@ img {
   position: absolute;
   width: 400px;
   height: 400px;
-  border: 1px dotted rgba(255, 111, 0, 0.3); /* Borde naranja ácido */
+  border: 1px dotted rgba(255, 117, 12, 0.3); /* Borde naranja ácido */
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -335,10 +335,10 @@ img {
 .data-point {
   position: absolute;
   font-size: 10px;
-  color: #ff6f00;
+  color: #FF4500;
   background-color: rgba(255, 111, 0, 0.5); /* Naranja ácido */
   pointer-events: none;
-  box-shadow: 0 0 2px #ff6f00; /* Resplandor naranja */
+  box-shadow: 0 0 2px #FF4500; /* Resplandor naranja */
   animation: float 5s infinite; /* Animación flotante */
   white-space: nowrap;
 }
@@ -359,9 +359,9 @@ img {
   position: absolute;
   width: 2px;
   height: 2px;
-  background-color: #ff6f00;
+  background-color: #FF4500;
   border-radius: 50%;
-  box-shadow: 0 0 5px #ff6f00;
+  box-shadow: 0 0 5px #FF4500;
 }
 
 footer {
@@ -371,7 +371,7 @@ footer {
   align-items: center;
   bottom: 0;
   left: 0;
-  color: #ff6f00; /* Naranja ácido */
+  color: #FF4500; /* Naranja ácido */
   width: 100%;
   height: 100px;
   background: #000;
