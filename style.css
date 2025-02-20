@@ -193,4 +193,11 @@
     img {
       height: 50px; /* Altura reducida en móviles */
     }
+    .futuristic-cursor {
+      display: none; /* Oculta el cursor futurista */
+    }
+  
+    body {
+      cursor: default; /* Vuelve el cursor al comportamiento estándar si lo hubiera */
+    }
   }

@@ -590,4 +590,11 @@ footer {
     height: 60px;
     margin: 5px;
   }
+  .futuristic-cursor {
+    display: none; /* Oculta el cursor futurista */
+  }
+
+  body {
+    cursor: default; /* Vuelve el cursor al comportamiento estándar si lo hubiera */
+  }
 }
