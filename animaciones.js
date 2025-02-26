@@ -29,7 +29,7 @@ sonidoLista.volume = 0.2; // Cambia 0.3 por el nivel de volumen que prefieras (d
 
 // Reproducir sonido ambiente en loop
 sonidoAmbiente.loop = true;
-sonidoAmbiente.volume = 0.3;
+sonidoAmbiente.volume = 0.1;
 sonidoAmbiente.play().catch(err => {
   console.log("El sonido de ambiente no se puede reproducir automáticamente:", err);
 });

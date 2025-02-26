@@ -214,7 +214,7 @@ document.addEventListener("mouseup", () => {
 
   // Reproducir sonido ambiente en loop
   sonidoAmbiente.loop = true;
-  sonidoAmbiente.volume = 0.3;
+  sonidoAmbiente.volume = 0.1;
   sonidoAmbiente.play();
 
   // Asignar evento a los paneles
