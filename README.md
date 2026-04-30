@@ -55,18 +55,6 @@ portafolio/
 
 ---
 
-## 🖥️ Uso local
-
-No requiere servidor ni instalación. Clona el repo y abre `index.html` directamente en el navegador.
-
-```bash
-git clone https://github.com/Hyoga1023/portafolio.git
-cd portafolio
-# Abre index.html en tu navegador
-```
-
----
-
 ## 📬 Contacto
 
 - ✉️ [cesarmartinez99@gmail.com](mailto:cesarmartinez99@gmail.com)
