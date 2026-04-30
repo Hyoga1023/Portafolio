@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cesar Martinez | Dev Front End</title>
+    <link rel="icon" href="img/icono_celta_creatividad.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+  </head>
+  <body>
+    <!-- CURSOR -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- NAV -->
+    <nav id="navbar">
+      <a href="#hero" class="nav-logo">CM</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="#habilidades">Skills</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <canvas id="pixi-canvas"></canvas>
+      <div class="hero-content">
+        <p class="hero-tag">// portafolio personal</p>
+        <h1 class="hero-name glitch" data-text="CESAR MARTINEZ">
+          CESAR <span>MARTINEZ</span>
+        </h1>
+        <p class="hero-role">
+          Front End Developer &amp; <span class="typed"></span>
+        </p>
+        <a href="#proyectos" class="hero-cta">Ver proyectos</a>
+      </div>
+      <div class="hero-scroll">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre">
+      <div class="sobre-grid">
+        <div class="sobre-img-wrap">
+          <div class="sobre-img-frame">
+            <img
+              src="img/foto_perfil.jpg"
+              alt="Foto Cesar Martinez"
+            />
+            <div class="sobre-corner tl"></div>
+            <div class="sobre-corner br"></div>
+          </div>
+        </div>
+        <div class="sobre-text">
+          <p class="section-label">// 001</p>
+          <h2 class="section-title">Sobre mí</h2>
+          <div class="section-line"></div>
+          <p>
+            Hola, soy <strong>Cesar Martinez</strong>, desarrollador Front End
+            apasionado por crear experiencias digitales que rompan lo
+            convencional. Combino <strong>diseño gráfico</strong> con código
+            para construir interfaces que no solo funcionan —
+            <strong>impactan</strong>.
+          </p>
+          <p>
+            Estudiante de <strong>Desarrollo de Software</strong> en el
+            Politécnico Internacional y especializado en Front End con
+            <strong>Alura LATAM</strong>. Me mueve la curiosidad por la
+            <strong>inteligencia artificial</strong>, la tecnología y todo lo
+            que desafía la realidad.
+          </p>
+          <p>
+            Dispuesto a <strong>aprender día tras día</strong>, para construir el futuro
+            pixel a pixel.
+          </p>
+          <div class="sobre-stats">
+            <div class="stat">
+              <div class="stat-num" data-target="2">0</div>
+              <div class="stat-label">años exp.</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" data-target="20">0</div>
+              <div class="stat-label">proyectos</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" data-target="100">0</div>
+              <div class="stat-label">% pasión</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades">
+      <p class="section-label">// 002</p>
+      <h2 class="section-title">Skills &amp;<br />Tecnologías</h2>
+      <div class="section-line"></div>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">HTML / CSS</span
+              ><span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">JavaScript</span
+              ><span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">GSAP / Animaciones</span
+              ><span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" data-width="70"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">React</span
+              ><span class="skill-pct">30%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" data-width="30"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">PixiJS / Canvas</span
+              ><span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" data-width="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Bootstrap / Tailwind</span
+              ><span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Git / GitHub</span
+              ><span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" data-width="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Diseño UI/UX</span
+              ><span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" data-width="85"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BREAK SECTION 1 -->
+    <div class="break-section" id="break1">
+      <p class="break-label">// filosofía</p>
+      <h2>"El código es<br />arte con lógica"</h2>
+      <p>
+        Cada línea escrita es una decisión de diseño. Cada animación cuenta una
+        historia. Cada proyecto es una experiencia que va más allá de la
+        pantalla.
+      </p>
+    </div>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <p class="section-label">// 003</p>
+      <h2 class="section-title">Proyectos<br />Destacados</h2>
+      <div class="section-line"></div>
+      <div class="proyectos-grid">
+        <div
+          class="proyecto-card"
+          data-proyecto="Dashboard IA"
+          data-desc="Dashboard interactivo con visualización de datos en tiempo real usando D3.js y WebSockets."
+        >
+          <img
+            class="proyecto-img"
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=70"
+            alt="Dashboard IA"
+          />
+          <div class="proyecto-info">
+            <p class="proyecto-tag">html, css, javascript · D3.js · WebSocket</p>
+            <h3 class="proyecto-title">Dashboard IA</h3>
+            <p class="proyecto-desc">
+              Visualización de datos en tiempo real con IA integrada.
+            </p>
+          </div>
+          <div class="proyecto-overlay">
+            <p class="proyecto-overlay-title">Dashboard IA</p>
+            <button
+              class="proyecto-btn"
+              onclick="
+                verProyecto(
+                  'Dashboard IA',
+                  'React · D3.js · WebSocket',
+                  'Dashboard interactivo con visualización de datos en tiempo real usando D3.js y WebSockets.',
+                )
+              "
+            >
+              Ver detalles
+            </button>
+          </div>
+        </div>
+        <div
+          class="proyecto-card"
+          data-proyecto="Portfolio 3D"
+          data-desc="Portafolio inmersivo con Three.js y shaders GLSL personalizados."
+        >
+          <img
+            class="proyecto-img"
+            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=70"
+            alt="Portfolio 3D"
+          />
+          <div class="proyecto-info">
+            <p class="proyecto-tag">html, css, javascript · Three.js · GLSL · GSAP</p>
+            <h3 class="proyecto-title">Portfolio 3D</h3>
+            <p class="proyecto-desc">
+              Experiencia inmersiva con gráficos 3D y shaders personalizados.
+            </p>
+          </div>
+          <div class="proyecto-overlay">
+            <p class="proyecto-overlay-title">Portfolio 3D</p>
+            <button
+              class="proyecto-btn"
+              onclick="
+                verProyecto(
+                  'Portfolio 3D',
+                  'html, css, javascript · Three.js · GLSL · GSAP',
+                  'Portafolio inmersivo con Three.js y shaders GLSL personalizados.',
+                )
+              "
+            >
+              Ver detalles
+            </button>
+          </div>
+        </div>
+        <div
+          class="proyecto-card"
+          data-proyecto="App E-commerce"
+          data-desc="Tienda online completa con carrito, pagos y panel de administración."
+        >
+          <img
+            class="proyecto-img"
+            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=70"
+            alt="E-commerce"
+          />
+          <div class="proyecto-info">
+            <p class="proyecto-tag">html, css, javascript · Node.js · Stripe</p>
+            <h3 class="proyecto-title">App E-commerce</h3>
+            <p class="proyecto-desc">
+              Tienda online completa con pasarela de pagos integrada.
+            </p>
+          </div>
+          <div class="proyecto-overlay">
+            <p class="proyecto-overlay-title">App E-commerce</p>
+            <button
+              class="proyecto-btn"
+              onclick="
+                verProyecto(
+                  'App E-commerce',
+                  'React · Node.js · Stripe',
+                  'Tienda online completa con carrito, pagos y panel de administración.',
+                )
+              "
+            >
+              Ver detalles
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia">
+      <p class="section-label">// 004</p>
+      <h2 class="section-title">Experiencia<br />&amp; Formación</h2>
+      <div class="section-line"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-year">2023 — 2024</p>
+          <h3 class="timeline-role">Especialización Front End</h3>
+          <p class="timeline-company">Alura LATAM</p>
+          <p class="timeline-desc">
+            Profundizando en html, css y javascript, React, animaciones avanzadas, GSAP y arquitectura
+            de componentes modernos.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-year">2024 — Presente</p>
+          <h3 class="timeline-role">Desarrollo de Software y Apps Móviles</h3>
+          <p class="timeline-company">Politécnico Internacional</p>
+          <p class="timeline-desc">
+            Formación integral en desarrollo web, móvil, bases de datos, Java, .Net, C# y
+            metodologías ágiles.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-year">2013 — Presente</p>
+          <h3 class="timeline-role">Asesor Integral In House</h3>
+          <p class="timeline-company">Protección S.A.</p>
+          <p class="timeline-desc">
+            Orientación y servicio al cliente en temas pensionales, asesoria y retiro de planes institucionales en ahorro voluntario y cesantías.<br /> Herramientas
+            digitales aplicadas al servicio financiero. acompañamiento profesional a empresas.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-year">Anterior</p>
+          <h3 class="timeline-role">Diseño Gráfico</h3>
+          <p class="timeline-company">Fundación Unilatina</p>
+          <p class="timeline-desc">
+            Base sólida en composición visual, teoría del color, tipografía y
+            diseño editorial que hoy potencia mi trabajo en UI/UX.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BREAK SECTION 2 -->
+    <div class="break-section">
+      <p class="break-label">// disponibilidad</p>
+      <h2>¿Tienes un<br />proyecto en mente?</h2>
+      <p>
+        Estoy disponible para proyectos freelance, colaboraciones y nuevos retos
+        creativos. Hablemos.
+      </p>
+      <a href="#contacto" class="break-btn">Trabajemos juntos →</a>
+    </div>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <p class="section-label">// 005</p>
+      <h2 class="section-title">Contacto</h2>
+      <div class="section-line"></div>
+      <div class="contacto-grid">
+        <div class="contacto-info">
+          <p>
+            ¿Tienes un proyecto interesante? ¿Quieres colaboración? No importa si
+            es una idea enorme o un pequeño experimento — me interesa
+            escucharla.
+          </p>
+          <div class="contacto-links">
+            <a href="mailto:cesarmartinez99@gmail.com" target="_blank" class="contacto-link"
+              ><span class="contacto-link-icon">✉</span> cesarmartinez99@gmail.com</a
+            >
+            <a href="https://www.linkedin.com/in/cesarmartinez99" target="_blank" class="contacto-link"
+              ><span class="contacto-link-icon">in</span>
+              www.linkedin.com/in/cesarmartinez99</a
+            >
+            <a href="https://github.com/Hyoga1023" target="_blank" class="contacto-link"
+              ><span class="contacto-link-icon">⌥</span>
+              github.com/Hyoga1023</a
+            >
+            <a href="https://www.google.com/maps/place/Yumbo,+Valle+del+Cauca" target="_blank" class="contacto-link"
+              ><span class="contacto-link-icon">◈</span> Yumbo, Valle del Cauca
+              — Colombia</a
+            >
+          </div>
+        </div>
+        <form
+          class="contacto-form"
+          id="contactForm"
+          onsubmit="enviarForm(event)"
+        >
+          <div class="form-group">
+            <input type="text" id="nombre" placeholder=" " required />
+            <label for="nombre">Nombre</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder=" " required />
+            <label for="email">Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="mensaje" placeholder=" " required></textarea>
+            <label for="mensaje">Mensaje</label>
+          </div>
+          <button type="submit" class="btn-enviar">Enviar mensaje →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="footer-copy">
+        © 2026 <span>Cesar Martinez</span> — Construido con pasión y creatividad
+      </p>
+      <img src="img/logo_letra_blanca_sin_fondo.png" alt="Logo desarrollador">
+    </footer>
+
+    <!-- BOTÓN FLOTANTE VOLVER ARRIBA -->
+    <button
+      id="btnTop"
+      aria-label="Volver arriba"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 14V4M9 4L4 9M9 4L14 9"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <script src="cursor.js"></script>
+    <script src="pixi.js"></script>  
+    <script src="gsap.js"></script>
+    <script src="sweetalert2.js"></script>
+    <script src="gsap_btn_top.js"></script>
+    <script src="navbar_toggler.js"></script>
+  </body>
+</html>
