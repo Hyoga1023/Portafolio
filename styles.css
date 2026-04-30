@@ -786,6 +786,15 @@
         width: 100px;
         height: auto;
       }
+      .social-icons{
+        display: flex;
+        gap: 1rem;
+        margin: 0 0 0 10px;
+      }
+      .social-icons a{
+        color: var(--amarillo);
+      }
+
 
       /* ===================== GLITCH ===================== */
       .glitch {
