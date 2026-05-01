@@ -171,9 +171,27 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
       // Mobile matchMedia
       mm.add("(max-width:900px)", () => {
         ScrollTrigger.getAll().forEach((t) => t.disable());
-        gsap.set([".hero-tag", ".hero-name", ".hero-role", ".hero-cta"], {
-          opacity: 1,
-          y: 0,
+
+        // Hero y timeline visibles de una
+        gsap.set(
+          [".hero-tag", ".hero-name", ".hero-role", ".hero-cta", ".timeline-item"],
+          { opacity: 1, x: 0, y: 0 }
+        );
+
+        // Barras de skills
+        document.querySelectorAll(".skill-bar").forEach((bar) => {
+          gsap.set(bar, { width: bar.dataset.width + "%" });
         });
-        gsap.set(".timeline-item", { opacity: 1, x: 0 });
+
+        // IntersectionObserver para el resto
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll(".mob-hidden").forEach((el) => observer.observe(el));
       });
