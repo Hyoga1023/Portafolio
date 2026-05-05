@@ -167,16 +167,40 @@
     const canvas = document.getElementById("scan-canvas");
     if (!canvas) return;
 
-    // En móvil degradar a imagen estática — WebGL es pesado y conflictivo
+    // En móvil 
     if (isMobile()) {
-      canvas.style.display = "none";
-      const img = document.createElement("img");
-      img.src = "img/foto_perfil.jpg";
-      img.alt = "Foto Cesar Martinez";
-      img.style.cssText = "width:100%;height:100%;object-fit:contain;display:block;position:absolute;top:0;left:0;filter:grayscale(60%) contrast(1.1);";
-      canvas.parentElement.appendChild(img);
-      return;
-    }
+  canvas.style.display = "none";
+  const frame = canvas.parentElement;
+
+  // Wrapper
+  const wrap = document.createElement("div");
+  wrap.className = "scan-mobile-wrap";
+
+  // Pausa aleatoria entre escaneos via CSS custom property
+  const delay = (Math.random() * 2).toFixed(2);
+  wrap.style.setProperty("--scan-delay", `${delay}s`);
+
+  // Foto base
+  const img = document.createElement("img");
+  img.src = "img/foto_perfil.jpg";
+  img.alt = "Foto Cesar Martinez";
+  img.className = "sobre-img-mobile";
+
+  // Capas glitch amarillo y naranja
+  const glitchA = document.createElement("img");
+  glitchA.src = "img/foto_perfil.jpg";
+  glitchA.className = "sobre-img-mobile-glitch amarillo";
+
+  const glitchB = document.createElement("img");
+  glitchB.src = "img/foto_perfil.jpg";
+  glitchB.className = "sobre-img-mobile-glitch naranja";
+
+  wrap.appendChild(img);
+  wrap.appendChild(glitchA);
+  wrap.appendChild(glitchB);
+  frame.appendChild(wrap);
+  return;
+}
 
     // Desktop: efecto completo
     const frame = canvas.parentElement;
