@@ -509,6 +509,8 @@
         justify-content: center;
         opacity: 0;
         transition: opacity 0.3s;
+        padding: 1.5rem; 
+        text-align: center;
       }
       .proyecto-card:hover .proyecto-overlay {
         opacity: 1;
