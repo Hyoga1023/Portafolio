@@ -127,11 +127,11 @@
 
     let progress = 0;
     let scanning = true;
-    let speed = 0.020;
+    let speed = 0.015;
 
     function startScan() {
       progress = 0;
-      speed = 0.020;
+      speed = 0.015;
       scanning = true;
     }
 
