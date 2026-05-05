@@ -187,19 +187,33 @@
   img.className = "sobre-img-mobile";
 
   // Capas glitch amarillo y naranja
-  const glitchA = document.createElement("img");
-  glitchA.src = "img/foto_perfil.jpg";
-  glitchA.className = "sobre-img-mobile-glitch amarillo";
+  if (isMobile()) {
+  canvas.style.display = "none";
+  const frame = canvas.parentElement;
 
-  const glitchB = document.createElement("img");
-  glitchB.src = "img/foto_perfil.jpg";
-  glitchB.className = "sobre-img-mobile-glitch naranja";
+  const wrap = document.createElement("div");
+  wrap.className = "scan-mobile-wrap";
+
+  const delay = (Math.random() * 2).toFixed(2);
+  wrap.style.setProperty("--scan-delay", `${delay}s`);
+
+  const img = document.createElement("img");
+  img.src = "img/foto_perfil.jpg";
+  img.alt = "Foto Cesar Martinez";
+  img.className = "sobre-img-mobile";
 
   wrap.appendChild(img);
-  wrap.appendChild(glitchA);
-  wrap.appendChild(glitchB);
+
+  ["g1", "g2", "g3", "g4"].forEach((cls) => {
+    const g = document.createElement("img");
+    g.src = "img/foto_perfil.jpg";
+    g.className = `sobre-img-mobile-glitch ${cls}`;
+    wrap.appendChild(g);
+  });
+
   frame.appendChild(wrap);
   return;
+}
 }
 
     // Desktop: efecto completo
