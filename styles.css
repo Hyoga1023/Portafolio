@@ -989,4 +989,8 @@
           opacity: 1;
           transform: translateY(0);
         }
+        #scan-canvas {
+          max-width: 100%;
+          max-height: 100%;
+        }
       }

@@ -84,6 +84,10 @@
     return PIXI.Texture.from(c);
   }
 
+  function isMobile() {
+    return window.innerWidth <= 900;
+  }
+
   function setup(app, W, H, shader, colorTex, depthTex) {
     const imgW = colorTex.width;
     const imgH = colorTex.height;
@@ -149,6 +153,7 @@
       const f = app.view.parentElement;
       const nW = f.offsetWidth;
       const nH = f.offsetHeight;
+      if (!nW || !nH) return; // evitar resize con dimensiones 0 en móvil
       app.renderer.resize(nW, nH);
       renderTex.resize(nW, nH);
       quad.width  = nW;
@@ -156,12 +161,24 @@
       applyContain(nW, nH);
     });
     ro.observe(app.view.parentElement);
-  } // ← cierre de setup que faltaba
+  }
 
   function initScan() {
     const canvas = document.getElementById("scan-canvas");
     if (!canvas) return;
 
+    // En móvil degradar a imagen estática — WebGL es pesado y conflictivo
+    if (isMobile()) {
+      canvas.style.display = "none";
+      const img = document.createElement("img");
+      img.src = "img/foto_perfil.jpg";
+      img.alt = "Foto Cesar Martinez";
+      img.style.cssText = "width:100%;height:100%;object-fit:contain;display:block;position:absolute;top:0;left:0;filter:grayscale(60%) contrast(1.1);";
+      canvas.parentElement.appendChild(img);
+      return;
+    }
+
+    // Desktop: efecto completo
     const frame = canvas.parentElement;
     const W = frame.offsetWidth  || 400;
     const H = frame.offsetHeight || 533;
