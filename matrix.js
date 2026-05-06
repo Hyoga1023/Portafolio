@@ -21,7 +21,7 @@
 
   function draw() {
     /* Trail — estela de desvanecimiento */
-    ctx.fillStyle = "rgba(10,10,10,0.5)";
+    ctx.fillStyle = "rgba(10,10,10,0.7)";
     ctx.fillRect(0, 0, W, H);
 
     ctx.font = `${fontSize}px "Space Mono", monospace`;
