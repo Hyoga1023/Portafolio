@@ -120,7 +120,7 @@
       }
       .nav-links a {
         font-family: var(--font-mono);
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         letter-spacing: 2px;
         text-transform: uppercase;
         color: var(--blanco2);
